@@ -1,0 +1,85 @@
+Verification of this release: sh run_all.sh, all four checks, both orders.
+date (UTC): 2026-09-16T01:31:36Z
+python: Python 3.11.15
+
+SHA-256 of the code and data files used (compare with SHA256SUMS):
+f9f48501222b226da1768f4c50eaa10e54de481450c34edec8ddacd04ca9bd03  verify_terrace.py
+9322a85306a9b5fbde639461b057119d90c401896a0541084bc6f6349d72f79c  run_all.sh
+afaf0a182ca8290722f58393a2e998c3ee671a21ff7a4a8fdf8e4401f467700d  scripts/build_negative_controls.py
+b5f941d8a48be4cf3af1e9fa23dcfaacd06e1398877cba3b6f34af8f68e7d3c7  scripts/canonicalize_gens_schema.py
+d3c7beb4e477c95536b1b5684787d2aec4c778899db925e126ed83de21db6fe7  scripts/coverage_check.py
+230b635965fbbe0fcff5ed7f09f371eaecee7d52425a2526dfd28f13e4880cc1  scripts/export_for_gap.py
+a59b69cffbd0aacb802cb36fb7693002110b79bfd000f4c83bc12d24b44985e7  scripts/check_ids.g
+1493c52a7a5b27310cdb93328b1306d4e266ec7a05c1ead50d4d930e59e22f1e  data/negative_controls.jsonl.gz
+c6c54971f7481f0dadd65f1f8edd2188886104de9dc5a1233f7e7ec983c224b8  data/order256_certs_shard0.jsonl.gz
+e8b35fb3f00521289e939c1d47a86084d496b24716a4d8ec2d917d4844a657c9  data/order256_certs_shard1.jsonl.gz
+ebbc528d47521a0a5fabf975294334d54cb8ea385168b66d596b781dfa0864c0  data/order256_certs_shard2.jsonl.gz
+1ff4bfb9357b3488572d7a2bc500f0326a41083c68589eb644bf1711202f2c9e  data/order256_certs_shard3.jsonl.gz
+e1bb17c3f4d5a9498d8e4f05c74de860e73de6734228c95c5a054d83b2d0e084  data/order256_certs_shard4.jsonl.gz
+4544a442aad9e49bbc9441593025b59ea945137f656f83b1856f4df6a64ef855  data/order256_certs_shard5.jsonl.gz
+1bf04f10d13e09b3580265e7b5b4f84604950cd3377ba9298724517e3ba7f8eb  data/order256_certs_shard6.jsonl.gz
+40b41fe697cd087e60a3cf6d707a9b21f38df4ca2f819a2c415f33d3d9959b22  data/order256_certs_shard7.jsonl.gz
+623900b012af22a301d9c06dffbb489369097a20bc2179410bda5eb22b8a5e50  data/order256_terraces.jsonl.gz
+a4461fb93aeb240613c34b7f30a36738ac1282515840706b2f106794ee19b9af  data/order384_certs_shard0.jsonl.gz
+427f71700d46867fbdb067c63afdae0c7a3e2be8cae580fda3694c59a2d7e47a  data/order384_certs_shard1.jsonl.gz
+91a83a433ad33da0e8114c86c456c00a4482fd3d855f5e9cc094ea2a0b4847b1  data/order384_certs_shard2.jsonl.gz
+6d0d72000d5d19d66b579fe9e45de7c4af5132d5d57a45d9d8da44ff9bc13038  data/order384_certs_shard3.jsonl.gz
+9d3ecc919448a2db389143b189bd460ddf74728ad7ae8f9770d068ff1ca3ba0b  data/order384_terraces.jsonl.gz
+
+$ sh run_all.sh
+=== 0/3  checksums ===
+CHECK 0: PASS
+
+=== 1/3  verifying every shipped witness (this is the long one) ===
+76325 / 76325 PASS
+CHECK 1: PASS
+
+=== 2/3  the verifier must reject every negative control ===
+0 / 9 PASS
+CHECK 2: PASS (all 9 rejected; reasons in check2_negative.txt)
+
+=== 3/3  coverage ===
+
+== order 256 ==
+  order256_certs_shard0.jsonl.gz       5767 records
+  order256_certs_shard1.jsonl.gz       5767 records
+  order256_certs_shard2.jsonl.gz       5767 records
+  order256_certs_shard3.jsonl.gz       5769 records
+  order256_certs_shard4.jsonl.gz       5767 records
+  order256_certs_shard5.jsonl.gz       5768 records
+  order256_certs_shard6.jsonl.gz       5768 records
+  order256_certs_shard7.jsonl.gz       5768 records
+  order256_terraces.jsonl.gz           9929 records
+  records                             56070
+  malformed, unreadable or abelian        0 []
+  distinct ids                        56070
+  ids shipped in two or more files        0 (expected 0; group data identical across copies: yes)
+  NrSmallGroups(256)                  56092
+  abelian groups of this order           22 (outside the conjecture)
+  non-abelian, must all be covered    56070
+  ORDER 256: all 56070 non-abelian ids are present, each with its own generator data.
+  (That this is every non-abelian group also needs each id to be right: scripts/check_ids.g checks that in GAP.)
+
+== order 384 ==
+  order384_certs_shard0.jsonl.gz       4202 records
+  order384_certs_shard1.jsonl.gz       4102 records
+  order384_certs_shard2.jsonl.gz       4101 records
+  order384_certs_shard3.jsonl.gz       4102 records
+  order384_terraces.jsonl.gz           3748 records
+  records                             20255
+  malformed, unreadable or abelian        0 []
+  distinct ids                        20154
+  ids shipped in two or more files      101 (expected 101; group data identical across copies: yes)
+  NrSmallGroups(384)                  20169
+  abelian groups of this order           15 (outside the conjecture)
+  non-abelian, must all be covered    20154
+  ORDER 384: all 20154 non-abelian ids are present, each with its own generator data.
+  (That this is every non-abelian group also needs each id to be right: scripts/check_ids.g checks that in GAP.)
+
+COVERAGE: PASS
+CHECK 3: PASS
+
+ALL CHECKS PASSED.
+(The id labels are checked separately, in GAP: see README.md, 'What you still have to trust'.)
+[exit status 0]
+[wall time 6827 s -- added by the log script, not run_all.sh output]

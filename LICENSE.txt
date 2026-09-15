@@ -1,0 +1,13 @@
+Everything in this deposit -- the data (data/, PROVENANCE.csv, SHA256SUMS),
+the code (verify_terrace.py, run_all.sh, scripts/), the logs
+(verification_log.txt, ids_check_log.txt, negative_controls_log.txt), the
+documentation (README.md, LICENSE.txt, CITATION.cff) and .gitignore -- is
+released under CC0 1.0 Universal (public domain dedication).
+
+To the extent possible under law, Hanyu Yang has waived all copyright and
+related or neighboring rights to this work. Full text:
+
+    https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Attribution is not required, but citing the deposit (see CITATION.cff) helps
+others find the source and is appreciated.

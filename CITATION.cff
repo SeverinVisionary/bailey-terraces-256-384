@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+title: >-
+  An explicit terrace for every non-abelian group of order 256 and 384
+message: If you use this dataset, please cite it.
+type: dataset
+authors:
+  - given-names: Hanyu
+    family-names: Yang
+    email: hanyu.yang.92@gmail.com
+    orcid: 'https://orcid.org/0009-0005-0419-4070'
+repository-code: 'https://github.com/SeverinVisionary/bailey-terraces-256-384'
+version: 1.0.0
+date-released: '2026-09-15'
+license: CC0-1.0
+keywords:
+  - terrace
+  - Bailey's conjecture
+  - sequenceable groups
+  - R-sequencing
+  - combinatorial design theory
+  - finite groups
+  - GAP Small Groups library
+abstract: >-
+  Explicit terraces for all 76,224 non-abelian groups of order 256 (56,070
+  groups) and 384 (20,154 groups), in 76,325 witness records (101 groups of
+  order 384 have two), together with a standalone Python verifier that also
+  checks each record describes a genuine group, nine negative controls that
+  the verifier must reject, a coverage check, and a GAP script confirming that
+  each record's group is the SmallGroup its id names, with the logs of both
+  checks run on this release. Orders 256 and 384 were the cases left open by
+  Theorem 32(vi) of the dynamic survey "Sequenceable Groups and Related Topics"
+  (M. A. Ollis, Electronic Journal of Combinatorics DS10, version 3, 2025),
+  which covers every other non-abelian order up to 511; combined with that
+  survey, every non-abelian group of order at most 511 is terraced.

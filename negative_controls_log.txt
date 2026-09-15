@@ -1,0 +1,29 @@
+FAIL  NEGATIVE_CONTROL_A_swap
+  testing: (a) valid terrace, two entries swapped
+  verifier reason: elements 58 and 132 (mutual inverses) occur 1 time(s) combined as a difference, must occur exactly 2
+FAIL  NEGATIVE_CONTROL_B_repeat_omit
+  testing: (b) an ordering that repeats one element and omits another
+  verifier reason: not an ordering of all 256 elements (repeats or omissions)
+FAIL  NEGATIVE_CONTROL_C_bad_start
+  testing: (c) an ordering not starting at the identity
+  verifier reason: does not start at the identity (index 0)
+FAIL  NEGATIVE_CONTROL_D_C2^8
+  testing: (d) C_2^8 = SmallGroup(256,56092), elementary abelian and non-cyclic: no ordering of it is a terrace. Every non-identity element is its own inverse, so a terrace would need each of the 255 non-identity elements exactly once among the 255 differences. The product of the differences telescopes: b_1 b_2 ... b_255 = a_1^-1 a_256 = a_256, which is not the identity. But in C_2^m with m >= 2 the product of all non-identity elements is the identity: written as 0/1 vectors, each of the m coordinates is 1 in exactly 2^(m-1) elements, an even number, so every coordinate of the sum is 0. Contradiction. So the checker must reject the shipped ordering, and would have to reject any ordering of this group.
+  verifier reason: self-inverse element 1 occurs 2 time(s) as a difference, must occur exactly once
+FAIL  NEGATIVE_CONTROL_E_wrong_presentation
+  testing: (e) a valid terrace for SmallGroup(256,6233) presented against SmallGroup(256,6234)'s presentation
+  verifier reason: elements 10 and 45 (mutual inverses) occur 3 time(s) combined as a difference, must occur exactly 2
+FAIL  NEGATIVE_CONTROL_F_last_two_transposed
+  testing: (f) a terrace with the last two entries transposed
+  verifier reason: self-inverse element 103 occurs 2 time(s) as a difference, must occur exactly once
+FAIL  NEGATIVE_CONTROL_G_not_associative
+  testing: (g) not a group: the operation these 'generators' induce is not associative ((1*3)*3 = 2 but 1*(3*3) = 1), and the first generator has order 4, not its declared 2. The difference tally alone accepts this ordering.
+  verifier reason: not a group: the generators generate more than 6 permutations
+FAIL  NEGATIVE_CONTROL_H_not_permutations
+  testing: (h) not a group: neither 'generator' is a permutation of 0..5. The difference tally alone accepts this ordering.
+  verifier reason: not a group: generator 0 is not a permutation of 0..5
+FAIL  NEGATIVE_CONTROL_I_generators_exceed_relative_orders
+  testing: (i) inconsistent data: two generators but one relative order. The tally uses only the first generator, a cyclic group of order 8, of which this ordering is a genuine terrace; the second generator makes the described structure non-abelian. The record must be rejected rather than read as a terrace of a non-abelian group.
+  verifier reason: malformed record: k=2 but 1 relative orders
+
+9 / 9 correctly FAIL, 0 / 9 incorrectly PASS.
