@@ -1,5 +1,8 @@
 # An explicit terrace for every non-abelian group of order 256 and 384
 
+Archived at Zenodo: [10.5281/zenodo.22785373](https://doi.org/10.5281/zenodo.22785373)
+(all versions: [10.5281/zenodo.22785372](https://doi.org/10.5281/zenodo.22785372)).
+
 This deposit gives an explicit terrace for **every one of the 76,224 non-abelian
 groups of order 256 and 384** — 56,070 of order 256 and 20,154 of order 384 —
 in 76,325 witness records (101 groups of order 384 have two). It also ships a
