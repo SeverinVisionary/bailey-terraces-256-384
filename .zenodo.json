@@ -1,0 +1,24 @@
+{
+  "upload_type": "dataset",
+  "title": "An explicit terrace for every non-abelian group of order 256 and 384",
+  "version": "1.0.0",
+  "language": "eng",
+  "access_right": "open",
+  "license": "cc-zero",
+  "creators": [
+    {
+      "name": "Yang, Hanyu",
+      "orcid": "0009-0005-0419-4070"
+    }
+  ],
+  "keywords": [
+    "terrace",
+    "Bailey's conjecture",
+    "sequenceable groups",
+    "R-sequencing",
+    "combinatorial design theory",
+    "finite groups",
+    "GAP Small Groups library"
+  ],
+  "description": "<p>Explicit terraces for all 76,224 non-abelian groups of order 256 (56,070 groups) and order 384 (20,154 groups), given as 76,325 witness records; 101 groups of order 384 carry two terraces.</p><p>A terrace of a group G of order n is an ordering a_1, ..., a_n of all its elements, starting at the identity, whose differences b_i = a_i^-1 a_{i+1} contain every self-inverse element exactly once and every other element together with its inverse exactly twice in total.</p><p>The deposit is built for checking rather than for trust in how the terraces were found. <code>sh run_all.sh</code> runs four checks using only the Python 3 standard library, with no GAP, network or installation: the files match their checksums; every record is a terrace of a genuine group of the stated order (the verifier first proves the generators give a regular permutation group of that order); nine deliberately wrong negative controls are all rejected; and every non-abelian id of each order is present, counted against NrSmallGroups(n) minus the abelian groups. A fifth check, <code>scripts/check_ids.g</code>, needs GAP and confirms that each record's group is the SmallGroup its id names. Both checks were run on these exact files and their unedited logs ship here (verification_log.txt, ids_check_log.txt), each headed by the SHA-256 of every file it read: 76,325 / 76,325 witnesses verified, and 76,325 / 76,325 ids confirmed with 0 mismatches.</p><p>Orders 256 and 384 were the cases left open by Theorem 32(vi) of M. A. Ollis, <em>Sequenceable Groups and Related Topics</em> (Electronic Journal of Combinatorics, Dynamic Survey DS10, Version 3, 2025), which covers every other non-abelian order up to 511. Combined with that survey, every non-abelian group of order at most 511 is terraced.</p>"
+}
